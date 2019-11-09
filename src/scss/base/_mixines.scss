@@ -1,0 +1,126 @@
+@function unpack($shorthand) {
+
+  @if length($shorthand) == 1 {
+    @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
+  } @else if length($shorthand) == 2 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 1) nth($shorthand, 2);
+  } @else if length($shorthand) == 3 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 3) nth($shorthand, 2);
+  } @else {
+    @return $shorthand;
+  }
+}
+
+@function _is-length($value) {
+  @return type-of($value) != "null" and (str-slice($value + "", 1, 4) == "calc"
+       or index(auto inherit initial 0, $value)
+       or (type-of($value) == "number" and not(unitless($value))));
+}
+
+@function _contains(
+  $list,
+  $values...
+) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != "number" {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+@function _is-size($value) {
+  @return _is-length($value)
+          or _contains("fill" "fit-content" "min-content" "max-content", $value);
+}
+
+// Size
+// Ex: 
+//     @include size(10px, 20px);
+
+@mixin size(
+  $width,
+  $height: $width
+) {
+  @if _is-size($height) {
+    height: $height;
+  } @else {
+    @error "`#{$height}` is not a valid length for the `$height` argument " +
+           "in the `size` mixin.";
+  }
+
+  @if _is-size($width) {
+    width: $width;
+  } @else {
+    @error "`#{$width}` is not a valid length for the `$width` argument " +
+           "in the `size` mixin.";
+  }
+}
+
+// Position
+// Ex: 
+//     @include position(absolute, 10px 20px 30px 40px);
+
+@mixin position($position: relative, $coordinates: null null null null) {
+  @if type-of($position) == list {
+    $coordinates: $position;
+    $position: relative;
+  }
+
+  $coordinates: unpack($coordinates);
+
+  $offsets: (
+    top:    nth($coordinates, 1),
+    right:  nth($coordinates, 2),
+    bottom: nth($coordinates, 3),
+    left:   nth($coordinates, 4)
+  );
+
+  position: $position;
+
+  @each $offset, $value in $offsets {
+    @if is-length($value) {
+      #{$offset}: $value;
+    }
+  }
+}
+
+// Pseudo element
+
+@mixin p-el($el, $el-width, $el-height) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      content: '';
+      width: $el-width;
+      height: $el-height;
+      @content;
+    }
+  }
+  @if $el == "both" {
+    &:before, &:after {
+      content: '';
+      width: $el-width;
+      height: $el-height;
+      @content;
+    }
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+      @content;
+  }
+
+  &:-moz-placeholder {
+      @content;
+  }
+
+  &::-moz-placeholder {
+      @content;
+  }
+
+  &:-ms-input-placeholder {
+      @content;
+  }
+}

@@ -1,0 +1,52 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 890px;
+  list-style: none;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include position(absolute, 0 0 null 0);
+  z-index: 1;
+
+  a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 60px;
+    width: 60px;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: opacity .3s ease;
+
+    &:hover, &:focus, &.active {
+      opacity: .6;
+    }
+
+    @include p_el(before, 1px, 40px) {
+      @include position(absolute, 0 0 null 0);
+      margin: auto;
+      background-color: #fff;
+    }
+  }
+
+  &--dc_logo {
+    @media (max-width: 767px) {
+      display: none;
+    }
+    a {
+      margin-top: 38px;
+      @include size(60px);
+      text-indent: 75px;
+      padding: 0;
+      background: url(/src/img/dc-logo.svg) center center no-repeat;
+      background-size: contain;
+      overflow: hidden;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
