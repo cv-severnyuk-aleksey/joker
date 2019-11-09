@@ -1,16 +1,16 @@
 # Project "Joker" for CV
 
-Project "Joker" was intended to demonstrate the skills of the candidate for the post of Front-End Developer Severnyuk Alexey.
+**Project "Joker"** was intended to demonstrate the skills of the candidate for the post of Front-End Developer **Severnyuk Alexey**.
 
-The project uses the idea of design @amourdigital (https://www.instagram.com/p/B3AcjXBASYf/).
+The project uses the idea of design **@amourdigital** (https://www.instagram.com/p/B3AcjXBASYf/).
 
-This design was created in Figma (https://www.figma.com/proto/JIJbJ3TjoGCuh7iDaDyNDm/Joker-promo?scaling=scale-down) for making a website.
+This design was created in **Figma** (https://www.figma.com/proto/JIJbJ3TjoGCuh7iDaDyNDm/Joker-promo?scaling=scale-down) for making a website.
 
 To see the website in action, go to https://cv-severnyuk-aleksey.github.io/joker/
 
 or
 
-To run that demo on your own computer, please follow the instructions in Getting Started
+To run that demo on your own computer, please follow the instructions in **Getting Started**
 
 ## Getting Started
 
@@ -36,9 +36,16 @@ yarn start
 
 ### See the website
 
-```
 Visit http://localhost:1234/joker/
-```
+
+## Built with
+
+### Front-end
+
+* [hyperapp](https://github.com/jorgebucaran/hyperapp)
+* [hyperapp-router](https://github.com/jorgebucaran/hyperapp-router)
+* [sass](https://github.com/sass/sass)
+* [parcel](https://parceljs.org/)
 
 ## Author
 
