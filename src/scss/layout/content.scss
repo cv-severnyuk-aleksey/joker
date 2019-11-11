@@ -4,6 +4,8 @@
   transform: translateX(-50%) translateY(-60%);
   margin: auto;
   z-index: 2;
+  opacity: 0;
+  animation: visibleItems 2s ease forwards;
 
   @media (max-width: 1360px) {
     max-width: 460px;
@@ -61,16 +63,27 @@
   }
 }
 
-.home {
+.page {
   height: 100vh;
   overflow: hidden;
   position: relative;
+}
+
+.main {
+  position: relative;
+  height: 100%;
+}
+
+.home {
+
   @include p_el(both, 50%, null) {
     @include position(absolute, 0 null 0 0);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(/src/img/joker-left.png);
+    opacity: 0;
+    animation: visibleItems 2s ease 1s forwards;
     z-index: 0;
     @media (max-width: 1500px) {
       opacity: .6;
@@ -93,16 +106,14 @@
     }
   }
 
-  .main {
-    position: relative;
-    height: 100%;
-  }
-
   .trailers {
     @include position(absolute, null 0 -70px 50%);
     z-index: 2;
     width: 990px;
     margin: auto auto auto -495px;
+    opacity: 0;
+    animation: trailers-show 2s ease 1.5s forwards;
+
     @media(max-width: 767px), (max-heigth: 600px) {
       display: none;
     }
@@ -275,6 +286,28 @@
         }
       }
     }
+  }
+}
 
+@keyframes visibleItems {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes trailers-show {
+  0% {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

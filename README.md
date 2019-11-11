@@ -2,9 +2,13 @@
 
 **Project "Joker"** was intended to demonstrate the skills of the candidate for the post of Front-End Developer **Severnyuk Alexey**.
 
+![Project "Joker" Design](https://github.com/cv-severnyuk-aleksey/joker/raw/master/screenshots/screenshot.jpg "Project 'Joker' Design")
+
 The project uses the idea of design **@amourdigital** (https://www.instagram.com/p/B3AcjXBASYf/).
 
 This design was created in **Figma** (https://www.figma.com/proto/JIJbJ3TjoGCuh7iDaDyNDm/Joker-promo?scaling=scale-down) for making a website.
+
+## Live Demo
 
 To see the website in action, go to https://cv-severnyuk-aleksey.github.io/joker/
 

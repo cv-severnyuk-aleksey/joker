@@ -58,7 +58,7 @@ const actions = {
 };
 
 const view = function(state, actions) {
-  return h("div", { className: state.currentPage }, [
+  return h("div", { className: 'page ' + state.currentPage }, [
     h("ul", { className: "navigation" }, [
       h("li", { className: "" }, [
         Link(
