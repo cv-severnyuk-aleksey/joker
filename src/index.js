@@ -74,11 +74,18 @@ const view = function(state, actions) {
             to: "/joker/about",
             className: [state.location.pathname === "/about" ? "active" : ""]
           },
-          ["About"]
+          ["Synopsis"]
         )
       ]),
-      h("li", { className: "navigation--dc_logo" }, [
-        h("a", { href: "https://www.dccomics.com/" }, "DC")
+      h("li", { className: "navigation--dc_logo navigation--dc_logo-" + state.currentPage }, [
+        h("a", { className: "navigation--dc_logo-link", href: "https://www.dccomics.com/" }, "DC"),
+        Link(
+          {
+            to: "/joker/",
+            className: "navigation--joker_logo-link"
+          },
+          ["Joker"]
+        )
       ]),
       h("li", { className: "" }, [
         Link(

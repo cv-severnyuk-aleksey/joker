@@ -9,8 +9,8 @@
   transform: translateY(-200px);
   animation: nav-show 2s ease 1.5s forwards;
 
-  @include position(absolute, 0 0 null 0);
-  z-index: 1;
+  @include position(fixed, 0 0 null 0);
+  z-index: 2;
 
   a {
     position: relative;
@@ -38,16 +38,33 @@
     @media (max-width: 767px) {
       display: none;
     }
+
     a {
       margin-top: 38px;
-      @include size(60px);
-      text-indent: 75px;
+      @include size(117px, 60px);
+      text-indent: 117px;
       padding: 0;
-      background: url(/src/img/dc-logo.svg) center center no-repeat;
+      background: url(/src/img/joker-logo.png) center center no-repeat;
       background-size: contain;
       overflow: hidden;
+      &.navigation--dc_logo-link {
+        display: none;
+        background: url(/src/img/dc-logo.svg) center center no-repeat;
+        background-size: contain;
+      }
       &:before {
         display: none;
+      }
+    }
+
+    &.navigation--dc_logo-home {
+      a {
+        &.navigation--dc_logo-link {
+          display: block;
+        }
+        &.navigation--joker_logo-link {
+          display: none;
+        }
       }
     }
   }

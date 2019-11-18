@@ -3,7 +3,7 @@
   z-index: 1;
 
   &--wb {
-    @include position(absolute, null null 0 0);
+    @include position(fixed, null null 0 0);
     @include size(61px, 75px);
     background: url(/src/img/wb-logo.svg) center center no-repeat;
     background-size: 61px, 75px;
