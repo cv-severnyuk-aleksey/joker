@@ -13,7 +13,8 @@ const state = {
   currentPage: "home",
   stateVideo: "close",
   currentVideo: "",
-  currentSlide: 2
+  currentSlide: 2,
+  currentGallerySlide: 1
 };
 
 const actions = {
@@ -51,6 +52,25 @@ const actions = {
       if (state.currentSlide < 5) {
         actions.changeSet({
           currentSlide: ++state.currentSlide
+        });
+      }
+    };
+  },
+
+  slideGalleryPrev: function() {
+    return function(state, actions) {
+      if (state.currentGallerySlide > 1) {
+        actions.changeSet({
+          currentGallerySlide: --state.currentGallerySlide
+        });
+      }
+    };
+  },
+  slideGalleryNext: function() {
+    return function(state, actions) {
+      if (state.currentGallerySlide < 20) {
+        actions.changeSet({
+          currentGallerySlide: ++state.currentGallerySlide
         });
       }
     };
