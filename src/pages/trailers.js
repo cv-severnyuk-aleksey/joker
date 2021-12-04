@@ -13,7 +13,7 @@ const labnolThumb = function(e) {
   });
 };
 
-const videoIds = ["MpWbg5gJEO8", "4Xy_K1HiryA", "hk0n2Ywy9k8", "k1z-45O-ZHQ", "XChsfmniPVc"];
+const videoIds = ["tMjZh3_XHos", "xRc3WviXk2M", "rgXplohCw5o", "k1z-45O-ZHQ", "XChsfmniPVc"];
 
 const Trailers = function() {
   return function(state, actions) {

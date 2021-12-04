@@ -60,10 +60,10 @@ const Home = function() {
                       {
                         className: "trailers--list__video",
                         onclick: function() {
-                          actions.openVideo("MpWbg5gJEO8");
+                          actions.openVideo("tMjZh3_XHos");
                         }
                       },
-                      labnolThumb("MpWbg5gJEO8")
+                      labnolThumb("tMjZh3_XHos")
                     )
                   ])
                 ]
@@ -82,10 +82,10 @@ const Home = function() {
                       {
                         className: "trailers--list__video",
                         onclick: function() {
-                          actions.openVideo("4Xy_K1HiryA");
+                          actions.openVideo("xRc3WviXk2M");
                         }
                       },
-                      labnolThumb("4Xy_K1HiryA")
+                      labnolThumb("xRc3WviXk2M")
                     )
                   ])
                 ]
@@ -104,10 +104,10 @@ const Home = function() {
                       {
                         className: "trailers--list__video",
                         onclick: function() {
-                          actions.openVideo("hk0n2Ywy9k8");
+                          actions.openVideo("rgXplohCw5o");
                         }
                       },
-                      labnolThumb("hk0n2Ywy9k8")
+                      labnolThumb("rgXplohCw5o")
                     )
                   ])
                 ]
